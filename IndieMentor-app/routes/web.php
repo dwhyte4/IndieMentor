@@ -24,5 +24,6 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/master', function () {
-    return view('template.master');
+    return view('template.sidebar');
 });
+
