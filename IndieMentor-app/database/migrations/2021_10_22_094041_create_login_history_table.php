@@ -16,6 +16,11 @@ class CreateLoginHistoryTable extends Migration
         Schema::create('login_history', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

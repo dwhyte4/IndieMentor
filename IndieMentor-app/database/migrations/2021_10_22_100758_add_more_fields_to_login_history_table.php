@@ -14,7 +14,17 @@ class AddMoreFieldsToLoginHistoryTable extends Migration
     public function up()
     {
         Schema::table('login_history', function (Blueprint $table) {
-            //
+            $table->string('firstname');
+            $table->string('middlename');
+            $table->string('lastname');
+            $table->string('email')->nullable();
+            $table->string('artistname')->nullable();
+            $table->string('firstlineaddress')->nullable();
+            $table->string('secondlineaddress')->nullable();
+            $table->string('city')->nullable();
+            $table->string('county')->nullable();
+            $table->string('postcode')->nullable();
+
         });
     }
 
