@@ -82,7 +82,7 @@
         <!-- Page Content -->
             <div id="page-content-wrapper">
                 @section('topnav')
-                    @include('template.nav')
+                    @include('navtemplate.nav')
                 @show
                 
                 <div class="container-fluid">
