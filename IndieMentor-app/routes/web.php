@@ -27,3 +27,7 @@ Route::get('/master', function () {
     return view('navtemplate.sidebar');
 });
 
+Route::get('/plans', function () {
+    return view('plans');
+});
+
