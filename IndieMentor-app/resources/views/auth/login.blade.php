@@ -1,8 +1,9 @@
 <x-guest-layout>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="logo/Indie Mentor Logo Transparent.svg" alt="trans-logo"class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 

@@ -1,9 +1,9 @@
 <x-guest-layout>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-            <img src="logo/Indie Mentor Logo.svg" class="w-20 h-20 fill-current text-gray-500" />
-            <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
+            <img src="logo/Indie Mentor Logo Transparent.svg" class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -41,6 +41,24 @@
                 <x-input id="artistname" class="block mt-1 w-full" type="text" name="artistname" :value="old('artistname')"  />
             </div>
 
+            <!-- Select a Subcription Plan -->
+            <div>    
+                <x-label for="plan" :value="__('Subcription Plan')" />
+                <div> 
+                    <select class="form-control" id="plan" name="role" required focus>
+                        <option value="freemium"  selected>
+                            Freemium
+                        </option>        
+                        <option value="premium"  selected>
+                            Premium
+                        </option>        
+                        <option value="Select Role" disabled selected>
+                            Select Role
+                        </option>        
+                    </select>
+                </div>
+            </div>
+            
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

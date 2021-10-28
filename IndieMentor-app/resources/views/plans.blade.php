@@ -82,7 +82,11 @@
               <li>Email support</li>
               <li>Acesss to Marketing Tools</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+            <a href="/register">
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary"> 
+                    Sign up for free
+                </button>
+            </a>
           </div>
         </div>
       </div>
@@ -104,7 +108,11 @@
               <li>Access to Marketing tools(including discounts)</li>
               <li>Free access to music industry release and admin strategies</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+            <a href="/register">
+                <button type="button" class="w-100 btn btn-lg btn-primary">
+                    Get started
+                </button>
+            </a>
           </div>
         </div>
       </div>
@@ -126,7 +134,11 @@
               <li>Phone and email support</li>
               <li>Help center access</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+            <a href="/contactus">
+            <button type="button" class="w-100 btn btn-lg btn-primary">
+                Contact us
+            </button>
+            </a>
           </div>
         </div>
       </div>
