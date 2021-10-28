@@ -2,8 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                
-            
+            <img src="logo/Indie Mentor Logo.svg" class="w-20 h-20 fill-current text-gray-500" />
+            <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> -->
             </a>
         </x-slot>
 
@@ -32,6 +32,13 @@
                 <x-label for="lastname" :value="__('Last Name')" />
 
                 <x-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')"  />
+            </div>
+
+            <!-- Artist Name -->
+            <div>
+                <x-label for="artistname" :value="__('Artist Name')" />
+
+                <x-input id="artistname" class="block mt-1 w-full" type="text" name="artistname" :value="old('artistname')"  />
             </div>
 
             <!-- Email Address -->

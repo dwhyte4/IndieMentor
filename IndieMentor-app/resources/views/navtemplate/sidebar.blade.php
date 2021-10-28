@@ -63,7 +63,9 @@
         <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
                 <div class="sidebar-heading">
-                    <a href="#" name="menu-logo"></a>LOGO 
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                    <img src="logo/Indie Mentor Logo Transparent.svg" alt="Indie Mentor Logo" width="160" height="80"/>
+                </a>
 
                 </div>
                     <div class="list-group list-group-flush">
