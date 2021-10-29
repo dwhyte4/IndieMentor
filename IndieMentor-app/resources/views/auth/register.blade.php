@@ -45,16 +45,15 @@
             <div>    
                 <x-label for="plan" :value="__('Subcription Plan')" />
                 <div> 
-                    <select class="form-control" id="plan" name="role" required focus>
-                        <option value="freemium"  selected>
-                            Freemium
-                        </option>        
-                        <option value="premium"  selected>
-                            Premium
-                        </option>        
-                        <option value="Select Role" disabled selected>
-                            Select Role
-                        </option>        
+                    <select class="form-control" id="plan" name="plan_id" required focus>
+                        <!-- create seeders toload plan id  -->
+                        @foreach ($plans as $plan)
+                        <option value={{$plan->id}}  selected>
+                            {{$plan->id}}
+                            
+                        </option>  
+                        @endforeach      
+                       
                     </select>
                 </div>
             </div>

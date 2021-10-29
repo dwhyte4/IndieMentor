@@ -41,14 +41,11 @@ Route::get('/plans', function () {
 });
 
 //User dashboard or homepage for freemium
-Route::get('/dashboard=free', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-//User dashborder page for the premium users
-Route::get('/dashboard=prem', function () {
-    return view('premdashboard');
-});
+
 
 //Contact Us page
 Route::get('/contactus', function () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +21,10 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $plans = Plan::all();
+        return view('auth.register', compact('plans'));
+        
+
     }
 
     /**
@@ -39,6 +43,7 @@ class RegisteredUserController extends Controller
             'lastname' => [ 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'plan_id'=>['required', 'exists:plans,id'],
         ]);
 
         $user = User::create([
@@ -53,6 +58,7 @@ class RegisteredUserController extends Controller
             'county' => $request->county,
             'postcode' => $request->postcode,
             'password' => Hash::make($request->password),
+            'plan_id' => $request->plan_id,
         ]);
 
         Auth::login($user);
