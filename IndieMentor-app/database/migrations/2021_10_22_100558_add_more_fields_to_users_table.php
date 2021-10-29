@@ -37,6 +37,15 @@ class AddMoreFieldsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->dropColumn('firstname');
+            $table->dropColumn('middlename');
+            $table->dropColumn('lastname');
+            $table->dropColumn('email');
+            $table->dropColumn('artistname');
+            $table->dropColumn('firstlineaddress');
+            $table->dropColumn('secondlineaddress');
+            $table->dropColumn('city');
+            $table->dropColumn('county');
+            $table->dropColumn('postcode');
         });
     }
 }
