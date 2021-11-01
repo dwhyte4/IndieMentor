@@ -43,12 +43,12 @@
 
             <!-- Select a Subcription Plan -->
             <div>    
-                <x-label for="plan" :value="__('Subcription Plan')" />
+                <x-label for="plans" :value="__('Subcription Plan')" />
                 <div> 
-                    <select class="form-control" id="plan" name="plan_id" required focus>
+                    <select class="form-control" id="plans" name="plan_id" required focus>
                         <!-- create seeders toload plan id  -->
                         @foreach ($plans as $plan)
-                        <option value={{$plan->id}}  selected>
+                        <option value={{$plan->id}} selected>
                             {{$plan->id}}
                             
                         </option>  

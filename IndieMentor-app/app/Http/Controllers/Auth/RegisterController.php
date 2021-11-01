@@ -70,6 +70,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'plan_id' => $data['plan_id'],
+
         ]);
+
+    // public function create($plans)
+    // {
+    //     $plans = Plan::all(['id', 'name']);
+    //     return View::make('register', compact('plan_id'));
+    // }
     }
 }
