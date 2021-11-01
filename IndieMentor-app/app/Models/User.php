@@ -28,7 +28,7 @@ class User extends Authenticatable
         'city',
         'county',
         'postcode',
-        'plan_id'
+        
     ];
 
     /**
@@ -49,4 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Eloquent follows a "convention over configuration" approach. Properties of models inherit properties from methods within their classes.
+
+    public function plans(){
+
+        return $this->belongsTo(Plan::class);
+    }
 }
