@@ -12,8 +12,8 @@
             </div>
             <div class="bg-white p-2 d-flex flex-column" style="border-radius:14px">
                 <div class="text-center mt-4"> <img class="img-fluid" src="https://i.imgur.com/kvdO7jw.png" width="200" /> </div>
-                <h5>Mastering sability-Testing dan Design Feedback</h5>
-                <p>kelas premium</p>
+                <h5>Mastering  Design Feedback</h5>
+                <p>premium</p>
                 <h4 class="green">$85.00</h4>
                 <div class="rating d-flex">
                     <div class="col-10"> <img src="https://akproject.tech/assets/img/icons/ic-star.svg" alt=""> <img src="https://akproject.tech/assets/img/icons/ic-star.svg" alt=""> <img src="https://akproject.tech/assets/img/icons/ic-star.svg" alt=""> <img src="https://akproject.tech/assets/img/icons/ic-star.svg" alt=""> <img src="https://akproject.tech/assets/img/icons/ic-star.svg" alt=""> <span class="green">(71)</span> </div>
@@ -30,7 +30,7 @@
                     <h5>Main benefits</h5>
                 </div>
                 <div class="d-flex">
-                    <div class="col-8">Waktu akses</div>
+                    <div class="col-8">Access Time</div>
                     <div class="ml-auto"><b>Selamanya</b></div>
                 </div>
                 <div class="d-flex">
