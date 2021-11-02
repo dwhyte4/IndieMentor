@@ -40,6 +40,9 @@ Route::get('/checkout', function () {
     return view('checkout');
 }); //
 
+// Stripe Payment Page
+Route::post('/payment', [StripePaymentController::class, 'payment']);
+
 
 //Feature page, it's pretty much a homepage
 Route::get('/features', function () {

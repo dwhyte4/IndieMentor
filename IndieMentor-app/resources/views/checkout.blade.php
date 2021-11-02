@@ -1,8 +1,10 @@
 @extends('navtemplate.usersidebar')
 
 @section('content')
+
 <link rel="stylesheet" type="text/css" href="css/checkbox.css" media=”screen” />
 <div class="container rounded bg-white">
+    
     <div class="bg row d-flex justify-content-center pb-5">
         <div class="col-sm-4 col-md-4 ml-1">
             <div class="py-4 pl-6 d-flex flex-row">
@@ -68,7 +70,12 @@
                 <div class="pl-2">
                     <div>PT AKPROJECET BANGUKAN INDONESIA (ADMINNYA)</div>
                     <div class="pb-2 "><b>8556572356</b></div>
-                </div> <input type="button" value="Konfirmasi pembayaran" class=" btn mt-4 btn-primary btn-block" style="border-radius:100px; background-color:#2447f9;">
+                </div> 
+                <!-- <input type="button" value="Konfirmasi pembayaran" class=" btn mt-4 btn-primary btn-block" style="border-radius:100px; background-color:#2447f9;"> -->
+                <form action="/payment" method="POST">
+                    @csrf
+                    <button id="checkout-button" class=" btn mt-4 btn-primary btn-block" style="border-radius:100px; background-color:#2447f9;">Proceed to Checkout</button>
+                </form>
                 <div class="text-center p-3"> <a class="text-link " target="_blank" href="#">Lihat Jam Operasional</a> </div>
             </div>
             <div class="bg-white mt-4 p-3 d-flex flex-column" style="border-radius:14px">
@@ -93,5 +100,43 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    // Create an instance of the Stripe object with your publishable API key
+    var stripe = Stripe('pk_test_******');
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/payment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'url': '/payment',
+                "X-CSRF-Token": document.querySelector('input[name=_token]').value
+            },
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(session) {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, you should display the localized error message to your
+            // customer using `error.message`.
+            if (result.error) {
+                alert(result.error.message);
+            }
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
+        });
+    });
+</script>
 
 @endsection
