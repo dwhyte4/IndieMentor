@@ -30,6 +30,17 @@ Route::get('/master', function () {
     return view('navtemplate.usersidebar');
 });
 
+// Random Templates page
+Route::get('/templates', function () {
+    return view('template');
+}); 
+
+// Random Checkout page
+Route::get('/checkout', function () {
+    return view('checkout');
+}); //
+
+
 //Feature page, it's pretty much a homepage
 Route::get('/features', function () {
     return view('features');
