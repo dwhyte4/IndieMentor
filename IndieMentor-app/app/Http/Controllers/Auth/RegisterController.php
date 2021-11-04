@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Plan;
+use App\Models\Plan_Template;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -75,16 +77,18 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function showplan(Request $request) {
+        $plans = Plan::all();
+    
+        $selectedID = Plan_Template::all(); 
+        
+        return view('auth.register', compact('id','name'));
+    }
+
    
 
 }
 
-public function showplan(Request $request) {
-    $plans = Plan::all();
 
-    $selectedID = Plan_Template::all(); 
-    
-    return view('auth.register', compact('id','name'));
-}
 
 

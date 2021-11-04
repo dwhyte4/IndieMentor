@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Plan;
+use App\Models\Plan_Template;
 
 class PlanController extends Controller
 {
@@ -47,6 +50,11 @@ class PlanController extends Controller
     public function show(Plan $Plan)
     {
         //
+        $plans = Plan::all();
+    
+        $selectedID = Plan_Template::all(); 
+        
+        return view('auth.register', compact('id','name'));
     }
 
     /**

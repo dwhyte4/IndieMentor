@@ -18,9 +18,9 @@ class AddFieldToTemplatesTable extends Migration
             //
             $table->string('name');
             $table->integer('price');
-            $table->string('description');
+            $table->string('description',500);
             $table->string('image');
-            $table->binary('pdf_doc');
+            $table->string('pdf_doc');
             $table->foreignIdFor(Plan::class);
         });
     }
@@ -36,7 +36,7 @@ class AddFieldToTemplatesTable extends Migration
             //
             $table->dropColumn('name');
             $table->dropColumn('price');
-            $table->dropColumn('price');
+            $table->dropColumn('pdf_doc');
             $table->dropColumn('description');
             $table->dropColumn('image');
             $table->dropColumn('plan_id');

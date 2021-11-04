@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Template;
+use Illuminate\Support\Str;
 
 class TemplateSeeder extends Seeder
 {
@@ -14,34 +15,71 @@ class TemplateSeeder extends Seeder
      */
     public function run()
     {
-        
+        // Template::truncate();
+        Template::create([
+            'name' => 'Copyright Template',
+            'price' => 999,
+            'pdf_doc' =>'/template_docs/Copyright-Page-Template.docx',
+            'image' => '/img/copyright-template.jpg',
+            'description' => Str::random(500),
+            'plan_id' => 1
+        ]);
+
+        Template::create([
+            'name' => 'Excel Song Split Sheet',
+            'price' => 999,
+            'pdf_doc' =>'/template_docs/Excel-Split-Sheet-Template.xlsx',
+            'image' => '/img/excel-split-sheet-template.jpg',
+            'description' => Str::random(500),
+            'plan_id' => 1
+        ]);
+
+        Template::create([
+            'name' => 'Song Split Sheet',
+            'price' => 999,
+            'pdf_doc' =>'/template_docs/Split-Sheet-Template.xlsx',
+            'image' => '/img/split-sheet-template.jpg',
+            'description' => Str::random(500),
+            'plan_id' => 1
+        ]);
+
+        Template::create([
+            'name' => 'Music Licencse Agreement Template',
+            'price' => 999,
+            'pdf_doc' =>'/template_docs/Music-License-Agreement-Template.xlsx',
+            'image' => '/img/music-licence.jpg',
+            'description' => Str::random(500),
+            'plan_id' => 1
+        ]);
     }
 
-    private function createDummyTemplates()
-    {
-        for($i=0; $i < 200; $i++)
-            Movie::create([
-                'name' => Str::random(20),
-                'image' => 'https://picsum.photos/600/400?random=1',
-                'description' => Str::random(500)
-            ]);
-    }
 
     private function createFavouriteMovies()
     {
         $names = [
-            'The Matrix', 
-            'Batman: The Dark Knight',
-            'Back to Future',
-            'Twin Town',
-            'In Bruges'
+            'The Matrix of the Industry Template', 
+            'Song Release Checklist Template',
+            'Music Expenses and Income Template',
+            'Sample Licencing Template',
+            'Sync License Template'
         ];
 
         foreach($names as $name)
-            Movie::create([
+            Template::create([
                 'name' => $name,
+                'price' => 999,
                 'image' => 'https://picsum.photos/600/400?random=1',
-                'description' => Str::random(500)
+                'pdf_doc' => 'http://picsum.photos//600/400?random=1',
+                'description' => Str::random(500),
+                'plan_id' => assignForeignKey()
             ]);
+    }
+
+    private function assignForeignKey()
+    {   
+        $plans = Plan::all();
+        $plan_id = $plans->randoms()->id;
+        return $plan_id;
+       
     }
 }

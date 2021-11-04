@@ -28,14 +28,14 @@ class RegisteredUserController extends Controller
         
 
     }
-    @return \Illuminate\Http\Response 
-    public function showplan(Request $request) {
-        $plans = Plan::all();
+    // @return \Illuminate\Http\Response 
+    // public function showplan(Request $request) {
+    //     $plans = Plan::all();
 
-        $selectedID = Plan_Template::all(); 
+    //     $selectedID = Plan_Template::all(); 
         
-        return view('auth.register', compact('id','name'));
-    }
+    //     return view('auth.register', compact('id','name'));
+    // }
 
     /**
      * Handle an incoming registration request.
