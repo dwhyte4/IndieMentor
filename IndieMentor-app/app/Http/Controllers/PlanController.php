@@ -41,10 +41,10 @@ class PlanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function show(Director $director)
+    public function show(Plan $Plan)
     {
         //
     }
@@ -52,10 +52,10 @@ class PlanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Director $director)
+    public function edit(Plan $Plan)
     {
         //
     }
@@ -64,10 +64,10 @@ class PlanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request, Template $Plan)
     {
         //
     }
@@ -75,11 +75,12 @@ class PlanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Director $director)
-    {
-        //
+    public function showplan() {
+        $plans = Plan::all();
+        
+        return view('plans.', compact('plans'));
     }
 }

@@ -49,7 +49,7 @@
                         <!-- create seeders toload plan id  -->
                         @foreach ($plans as $plan)
                         <option value={{$plan->id}} selected>
-                            {{$plan->id}}
+                            {{$plan->name}}
                             
                         </option>  
                         @endforeach      

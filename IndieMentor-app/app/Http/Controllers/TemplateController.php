@@ -58,10 +58,10 @@ class TemplateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Template  $Template
      * @return \Illuminate\Http\Response
      */
-    public function show(Director $director)
+    public function show(Template $template)
     {
         //
     }
@@ -69,10 +69,10 @@ class TemplateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Template  $Template
      * @return \Illuminate\Http\Response
      */
-    public function edit(Director $director)
+    public function edit(Template $template)
     {
         //
     }
@@ -81,10 +81,10 @@ class TemplateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Director  $director
+     * @param  \App\Models\Template  $Template
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request,Template $template)
     {
         //
     }
@@ -95,7 +95,7 @@ class TemplateController extends Controller
      * @param  \App\Models\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Director $director)
+    public function destroy(Template $template)
     {
         //
     }

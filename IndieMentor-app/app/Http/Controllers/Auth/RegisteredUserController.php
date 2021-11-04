@@ -21,7 +21,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        $plans = Plan::all();
+        return $plans = Plan::all();
         return view('auth.register', compact('plans'));
         
 
