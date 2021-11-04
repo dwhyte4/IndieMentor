@@ -21,10 +21,20 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return $plans = Plan::all();
-        return view('auth.register', compact('plans'));
+        // return $plans = Plan::all();
+        // return view('auth.register', compact('plans'));
+
+        
         
 
+    }
+    @return \Illuminate\Http\Response 
+    public function showplan(Request $request) {
+        $plans = Plan::all();
+
+        $selectedID = Plan_Template::all(); 
+        
+        return view('auth.register', compact('id','name'));
     }
 
     /**

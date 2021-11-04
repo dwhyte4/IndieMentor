@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Response; 
 
 class RegisterController extends Controller
 {
@@ -72,11 +73,18 @@ class RegisterController extends Controller
             'plan_id' => $data['plan_id'],
 
         ]);
-
-    // public function create($plans)
-    // {
-    //     $plans = Plan::all(['id', 'name']);
-    //     return View::make('register', compact('plan_id'));
-    // }
     }
+
+   
+
 }
+
+public function showplan(Request $request) {
+    $plans = Plan::all();
+
+    $selectedID = Plan_Template::all(); 
+    
+    return view('auth.register', compact('id','name'));
+}
+
+

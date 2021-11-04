@@ -55,7 +55,7 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Plan $Plan)
+    public function edit(Plan $plan)
     {
         //
     }
@@ -67,7 +67,7 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Template $Plan)
+    public function update(Request $request, Plan $plan)
     {
         //
     }
@@ -78,9 +78,9 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $Plan
      * @return \Illuminate\Http\Response
      */
-    public function showplan() {
-        $plans = Plan::all();
+    // public function showplan(Request $request) {
+    //     $plans = Plan::all();
         
-        return view('plans.', compact('plans'));
-    }
+    //     return view('auth.register', compact('id','name'));
+    // }
 }
