@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Template;
+use App\Models\Plan;
 use Illuminate\Support\Str;
+
+
 
 class TemplateSeeder extends Seeder
 {
@@ -51,10 +54,13 @@ class TemplateSeeder extends Seeder
             'description' => Str::random(500),
             'plan_id' => 1
         ]);
+
+        $this->createDummyTemplates();
+        $this->assignForeignKey();
     }
 
 
-    private function createFavouriteMovies()
+    private function createDummyTemplates()
     {
         $names = [
             'The Matrix of the Industry Template', 
@@ -71,14 +77,14 @@ class TemplateSeeder extends Seeder
                 'image' => 'https://picsum.photos/600/400?random=1',
                 'pdf_doc' => 'http://picsum.photos//600/400?random=1',
                 'description' => Str::random(500),
-                'plan_id' => assignForeignKey()
+                'plan_id' => $this->assignForeignKey()
             ]);
     }
 
     private function assignForeignKey()
     {   
         $plans = Plan::all();
-        $plan_id = $plans->randoms()->id;
+        $plan_id = $plans->random()->id;
         return $plan_id;
        
     }

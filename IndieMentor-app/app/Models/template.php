@@ -8,11 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Template extends Model
 {
     
-    
+    use HasFactory;
+
     public function plans(){
 
         return $this->belongsToMany(Plan::class, 'plans');
     }
-    
-    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'image',
+        'description',
+        'price',
+        'plan_id',
+        'pdf_doc'
+    ];
+
 }
